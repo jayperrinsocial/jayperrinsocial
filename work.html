@@ -50,3 +50,60 @@
       transform: scale(1.1);
       box-shadow: 0 6px 15px rgba(0,0,0,0.2);
     }
+
+    .grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 15px;
+      background: #fff;
+    }
+
+    .footer {
+      margin-top: 60px;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    @media (max-width: 480px) {
+      .grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 18px;
+      }
+      .grid a {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Examples of My Work</h1>
+    <div class="grid">
+      <a href="company1.html" title="Company 1">
+        <img src="logos/company1.png" alt="Company 1 Logo" />
+      </a>
+      <a href="company2.html" title="Company 2">
+        <img src="logos/company2.png" alt="Company 2 Logo" />
+      </a>
+      <a href="company3.html" title="Company 3">
+        <img src="logos/company3.png" alt="Company 3 Logo" />
+      </a>
+      <a href="company4.html" title="Company 4">
+        <img src="logos/company4.png" alt="Company 4 Logo" />
+      </a>
+      <a href="company5.html" title="Company 5">
+        <img src="logos/company5.png" alt="Company 5 Logo" />
+      </a>
+      <a href="company6.html" title="Company 6">
+        <img src="logos/company6.png" alt="Company 6 Logo" />
+      </a>
+    </div>
+
+    <div class="footer">
+      <p>© 2025 Jay Perrin | Freelance Digital Marketing</p>
+    </div>
+  </div>
+</body>
+</html>
