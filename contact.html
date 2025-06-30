@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Jay Perrin</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    form {
+      max-width: 600px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+      color: #333;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 18px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+      resize: vertical;
+    }
+    textarea {
+      min-height: 120px;
+    }
+    input[type="submit"] {
+      background-color: #333;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease;
+    }
+    input[type="submit"]:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Contact Jay Perrin</h1>
+    <p>If you want reliable and dedicated expert help, please get in touch using the form below.</p>
+
+    <form action="https://formspree.io/f/mayvlkjo" method="POST">
+      <label for="name">Name <span style="color:red">*</span></label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="telephone">Telephone</label>
+      <input type="text" id="telephone" name="telephone" />
+
+      <label for="email">Email Address <span style="color:red">*</span></label>
+      <input type="email" id="email" name="_replyto" required />
+
+      <label for="message">Comments <span style="color:red">*</span></label>
+      <textarea id="message" name="message" required></textarea>
+
+      <input type="submit" value="Send Message" />
+    </form>
+
+    <div class="footer">
+      <p>© 2025 Jay Perrin | Freelance Digital Marketing</p>
+    </div>
+  </div>
+</body>
+</html>
