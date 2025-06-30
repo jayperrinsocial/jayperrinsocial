@@ -58,29 +58,32 @@ p {
   border-radius: 5px;
   transition: background-color 0.3s ease;
   text-align: center;
-  background-color: #333333; /* Default: slate black */
 }
 
-/* Contact Me button (first link) hover */
-.links a:nth-child(1):hover {
+/* Contact Me button */
+.links a.contact {
+  background-color: #333333;
+}
+
+.links a.contact:hover {
   background-color: #555555;
 }
 
-/* LinkedIn button (second link) */
-.links a:nth-child(2) {
-  background-color: #0077B5; /* LinkedIn blue */
+/* LinkedIn button */
+.links a.linkedin {
+  background-color: #0077B5;
 }
 
-.links a:nth-child(2):hover {
+.links a.linkedin:hover {
   background-color: #005f8d;
 }
 
-/* Examples of My Work button (third link) */
-.links a:nth-child(3) {
-  background-color: #D35400; /* Burnt orange */
+/* Examples of My Work button */
+.links a.work {
+  background-color: #D35400;
 }
 
-.links a:nth-child(3):hover {
+.links a.work:hover {
   background-color: #a84300;
 }
 
