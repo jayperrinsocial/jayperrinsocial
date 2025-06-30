@@ -100,12 +100,14 @@ p {
 }
 @keyframes flicker {
   0%, 100% { opacity: 1; filter: brightness(1); }
-  45% { opacity: 0.3; filter: brightness(0.5); }
-  55% { opacity: 1; filter: brightness(1.2); }
+  40% { opacity: 0.3; filter: brightness(0.5); }
+  50% { opacity: 1; filter: brightness(1.5); }
+  60% { opacity: 0.8; filter: brightness(1.2); }
 }
 
 .flicker-effect {
-  animation: flicker 1.2s ease-in-out infinite;
+  animation: flicker 2s ease-in-out forwards;
+  /* forwards to keep final state after animation */
 }
 
 
