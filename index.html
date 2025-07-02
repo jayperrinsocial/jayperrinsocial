@@ -5,55 +5,93 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Jay Perrin Social</title>
   <link rel="stylesheet" href="styles.css" />
-<style>
-  .vertical-links {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 14px;
-    margin-top: 30px;
-  }
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      color: #333;
+    }
 
-  .vertical-links a {
-    display: inline-block;
-    width: auto;
-    max-width: 240px;
-    min-width: 200px;
-    padding: 12px 16px;
-    font-weight: bold;
-    border-radius: 8px;
-    text-decoration: none;
-    text-align: center;
-    transition: background-color 0.3s ease;
-    color: white;
-    box-sizing: border-box;
-  }
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
 
-  .work {
-    background-color: #d84315; /* deep orange */
-  }
+    img.flicker-effect {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
 
-  .contact {
-    background-color: #0ea5e9; /* blue */
-  }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
 
-  .audit {
-    background-color: #10b981; /* emerald green */
-  }
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
 
-  .work:hover {
-    background-color: #bf360c;
-  }
+    .links-vertical {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 30px;
+      gap: 15px;
+    }
 
-  .contact:hover {
-    background-color: #0284c7;
-  }
+    .links-vertical .btn {
+      padding: 12px 24px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 6px;
+      text-align: center;
+      color: white;
+      text-decoration: none;
+      width: fit-content;
+      min-width: 180px;
+      background-color: #333;
+      transition: background 0.3s ease;
+    }
 
-  .audit:hover {
-    background-color: #059669;
-  }
-</style>
+    .links-vertical .btn.work {
+      background-color: #d84315;
+    }
 
+    .links-vertical .btn.contact {
+      background-color: #007acc;
+    }
+
+    .links-vertical .btn.audit {
+      background-color: #10b981;
+    }
+
+    .links-vertical .btn:hover {
+      opacity: 0.9;
+    }
+
+    .footer {
+      margin-top: 60px;
+      font-size: 0.85rem;
+      color: #777;
+    }
+
+    .footer-icons {
+      margin-top: 10px;
+    }
+
+    .footer-icons a {
+      margin: 0 8px;
+      display: inline-block;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -63,10 +101,10 @@
       I’m a UK-based digital marketer with 10+ years’ experience in social media management and paid advertising. I help businesses grow their online presence, generate leads, and gain customers. If you want reliable and dedicated expert help, get in touch.
     </p>
 
-    <div class="links vertical-links">
-      <a href="work.html" target="_blank" class="work">Examples of My Work</a>
-      <a href="contact.html" target="_blank" class="contact">Contact Me</a>
-      <a href="contact.html#audit" target="_blank" class="audit">Request Free Audit</a>
+    <div class="links-vertical">
+      <a href="work.html" target="_blank" class="btn work">Examples of My Work</a>
+      <a href="contact.html" target="_blank" class="btn contact">Contact Me</a>
+      <a href="audit.html" target="_blank" class="btn audit">Request Free Audit</a>
     </div>
 
     <div class="footer">
