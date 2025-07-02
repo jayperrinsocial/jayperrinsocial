@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Examples of My Work</title>
-  <br>
   <link rel="stylesheet" href="styles.css" />
   <style>
     body {
@@ -17,7 +16,7 @@
     }
 
     .container {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 50px auto;
       padding: 0 20px;
     }
@@ -29,19 +28,19 @@
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
       justify-items: center;
       align-items: center;
     }
 
     .grid a {
       display: block;
-      width: 130px;
-      height: 130px;
+      width: 150px;
+      height: 150px;
       border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       background: white;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       text-decoration: none;
@@ -49,7 +48,7 @@
 
     .grid a:hover {
       transform: scale(1.1);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
     }
 
     .grid img {
@@ -66,14 +65,22 @@
       color: #777;
     }
 
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+      }
+    }
+
     @media (max-width: 480px) {
       .grid {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-        gap: 18px;
+        grid-template-columns: 1fr;
+        gap: 20px;
       }
+
       .grid a {
-        width: 100px;
-        height: 100px;
+        width: 120px;
+        height: 120px;
       }
     }
   </style>
@@ -81,16 +88,15 @@
 <body>
   <div class="container">
     <h1>Examples of My Work</h1>
-  
+
     <div class="grid">
-        
       <a href="netninja.html" title="Net Ninja">
         <img src="logos/netninja.jpg" alt="Net Ninja Logo" />
       </a>
       <a href="totallysportsinsurance.html" title="Totally Sports Insurance">
         <img src="logos/totally.jpg" alt="Totally Sports Logo" />
       </a>
-       <a href="jdsports.html" title="JD Sports Ltd.">
+      <a href="jdsports.html" title="JD Sports Ltd.">
         <img src="logos/jdsports.jpg" alt="JD Sports Logo" />
       </a>
       <a href="rebalancechiropractic.html" title="Rebalance Chiropractic">
@@ -99,7 +105,7 @@
       <a href="choicechiropractic.html" title="Choice Chiropractic">
         <img src="logos/choice.jpg" alt="Choice Chiropractic Logo" />
       </a>
-           <a href="360studios.html" title="360 Studios Ltd.">
+      <a href="360studios.html" title="360 Studios Ltd.">
         <img src="logos/360studios.jpg" alt="360 Studios Logo" />
       </a>
     </div>
