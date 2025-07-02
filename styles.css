@@ -110,7 +110,21 @@ p {
 
 .footer {
   margin-top: 60px;
-  font-size: 0.85rem; /* Reduced from 0.9rem */
   color: #777;
   text-align: center;
 }
+
+.footer-text {
+  font-size: 0.75rem; /* Smaller than default */
+  margin: 0;
+}
+
+.footer-icons {
+  margin-top: 10px;
+}
+
+.footer-icons a {
+  margin: 0 10px;
+  display: inline-block;
+}
+
