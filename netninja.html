@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Net Ninja Project | Jay Perrin</title>
+
+  <!-- Google Font: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    .back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 0.95rem;
+      padding: 8px 16px;
+      background-color: #333;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.3s ease;
+    }
+
+    .back-button:hover {
+      background-color: #555;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 100px auto 50px;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .description {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      justify-items: center;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+      object-fit: cover;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin-top: 80px;
+      }
+
+      .back-button {
+        font-size: 0.85rem;
+        padding: 6px 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="work.html" class="back-button">← Back to Work</a>
+
+  <div class="container">
+    <h1>Net Ninja</h1>
+    <p class="description">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl in bibendum finibus, magna sapien dictum libero, vel dapibus risus tortor vel nisi. Integer vel ante id nunc vulputate aliquam. Curabitur ac orci et leo luctus pharetra. Quisque imperdiet sem vel lorem laoreet lacinia.
+    </p>
+
+    <div class="gallery">
+      <img src="images/netninja1.jpg" alt="Net Ninja Screenshot 1">
+      <img src="images/netninja2.jpg" alt="Net Ninja Screenshot 2">
+      <img src="images/netninja3.jpg" alt="Net Ninja Screenshot 3">
+      <img src="images/netninja4.jpg" alt="Net Ninja Screenshot 4">
+      <img src="images/netninja5.jpg" alt="Net Ninja Screenshot 5">
+      <img src="images/netninja6.jpg" alt="Net Ninja Screenshot 6">
+    </div>
+  </div>
+</body>
+</html>
