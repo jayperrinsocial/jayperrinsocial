@@ -48,9 +48,50 @@
     input[type="submit"]:hover {
       background-color: #555;
     }
+
+    .back-button {
+      display: inline-block;
+      margin: 20px;
+      text-decoration: none;
+      background-color: #000;
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 5px;
+      font-size: 0.95rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .back-button:hover {
+      background-color: #333;
+    }
+
+    .container {
+      padding: 0 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .footer {
+      margin-top: 60px;
+      font-size: 0.85rem;
+      color: #777;
+      text-align: center;
+    }
+
+    .footer-icons {
+      margin-top: 10px;
+    }
+
+    .footer-icons a {
+      margin: 0 8px;
+      display: inline-block;
+    }
   </style>
 </head>
 <body>
+
+  <a href="index.html" class="back-button">← Back to Home</a>
+
   <div class="container">
     <h1>Contact Jay Perrin</h1>
     <p>If you want reliable and dedicated expert help, please get in touch using the form below.</p>
@@ -71,7 +112,7 @@
       <input type="submit" value="Send Message" />
     </form>
 
-<div class="footer">
+    <div class="footer">
       <p class="footer-text">© 2025 Jay Perrin | Freelance Digital Marketing</p>
       <div class="footer-icons">
         <a href="https://www.linkedin.com/in/jayperrin/" target="_blank" aria-label="LinkedIn">
@@ -85,6 +126,7 @@
           </svg>
         </a>
       </div>
+    </div>
   </div>
 </body>
 </html>
