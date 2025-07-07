@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rebalance Chiropractic</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f8f8;
+      color: #333;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin: 20px;
+      text-decoration: none;
+      background-color: #000;
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 5px;
+      font-size: 0.95rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .back-button:hover {
+      background-color: #333;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      margin-bottom: 25px;
+      opacity: 0;
+      animation: fadeIn 1.2s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    .description {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      object-fit: cover;
+      height: 100%;
+      background-color: white;
+    }
+
+    @media (max-width: 500px) {
+      .back-button {
+        font-size: 0.85rem;
+        padding: 8px 12px;
+        margin: 15px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .description {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="work.html" class="back-button">← Back to Work</a>
+
+  <div class="container">
+    <h1>Rebalance Chiropractic</h1>
+
+    <div class="description">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt, magna in varius sollicitudin, 
+        lorem nisi tempor ipsum, et feugiat leo justo non erat. Pellentesque habitant morbi tristique senectus 
+        et netus et malesuada fames ac turpis egestas.
+      </p>
+    </div>
+
+    <div class="gallery">
+      <img src="images/rebalance1.jpg" alt="Rebalance Chiropractic Project Image 1" />
+      <img src="images/rebalance2.jpg" alt="Rebalance Chiropractic Project Image 2" />
+      <img src="images/rebalance3.jpg" alt="Rebalance Chiropractic Project Image 3" />
+      <img src="images/rebalance4.jpg" alt="Rebalance Chiropractic Project Image 4" />
+      <img src="images/rebalance5.jpg" alt="Rebalance Chiropractic Project Image 5" />
+      <img src="images/rebalance6.jpg" alt="Rebalance Chiropractic Project Image 6" />
+    </div>
+  </div>
+
+</body>
+</html>
