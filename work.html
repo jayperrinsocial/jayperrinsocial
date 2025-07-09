@@ -7,7 +7,6 @@
 
   <!-- Google Font: Poppins -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
 
   <style>
     body {
@@ -39,7 +38,7 @@
 
     .container {
       max-width: 1000px;
-      margin: 80px auto 50px; /* extra space for back button */
+      margin: 80px auto 50px;
       padding: 0 20px;
     }
 
@@ -50,16 +49,16 @@
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 40px;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 30px;
       justify-items: center;
       align-items: center;
     }
 
     .grid a {
       display: block;
-      width: 150px;
-      height: 150px;
+      width: 120px;
+      height: 120px;
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -98,20 +97,20 @@
 
     @media (max-width: 768px) {
       .grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
       }
     }
 
     @media (max-width: 480px) {
       .grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
       }
 
       .grid a {
-        width: 120px;
-        height: 120px;
+        width: 100px;
+        height: 100px;
       }
 
       .back-button {
@@ -130,11 +129,9 @@
 
   <div class="container">
     <h1>Portfolio of Work</h1>
-      <p>
+    <p>
       I have worked with a wide range of clients over the years. Here are a selection.
-      <br>
-        <br>
-          </p>
+    </p>
     <br>
     <div class="grid">
       <a href="netninja.html" title="Net Ninja">
