@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bespokémon</title>
+  <title>Bespokemon</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
   <style>
     body {
@@ -110,11 +110,11 @@
       }
     }
 
-    /* Modal styles */
+    /* Modal Styles */
     .modal {
       display: none;
       position: fixed;
-      z-index: 999;
+      z-index: 10;
       padding-top: 60px;
       left: 0;
       top: 0;
@@ -130,11 +130,12 @@
       max-width: 90%;
       max-height: 80vh;
       border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(255,255,255,0.2);
     }
 
     .close {
       position: absolute;
-      top: 30px;
+      top: 25px;
       right: 35px;
       color: #fff;
       font-size: 40px;
@@ -143,10 +144,8 @@
       cursor: pointer;
     }
 
-    .close:hover,
-    .close:focus {
-      color: #bbb;
-      text-decoration: none;
+    .close:hover {
+      color: #ccc;
     }
   </style>
 </head>
@@ -155,26 +154,25 @@
   <a href="work.html" class="back-button">← Back to Work</a>
 
   <div class="container">
-    <h1>BES Pokémon</h1>
+    <h1>Bespokemon</h1>
 
     <div class="description">
       <p>
-        BES Pokémon is a passion project and content brand aimed at Pokémon card collectors and fans of competitive play. I worked with the team on creating branded visuals, social media content, and campaign graphics to help grow their online presence.
-      </p>
-    </div>
+        <a href="https://www.bespokemon.com/">Bespokemon terrariums</a> create hand crafted, custom-made Pokemon models. The owner, Jamie, brought me on board to head up Facebook and Instagram adverts, in order to boost online sales. </p>
+          </div>
 
     <div class="gallery">
-      <a href="images/bespokemon1.jpg">
-        <img src="images/bespokemon1.jpg" alt="Bespokémon Image 1" />
+      <a href="images/bespokemon1.png">
+        <img src="images/bespokemon1.png" alt="Bespokemon Image 1" />
       </a>
-      <a href="images/bespokemon2.jpg">
-        <img src="images/bespokemon2.jpg" alt="Bespokémon Image 2" />
+      <a href="images/bespokemon2.png">
+        <img src="images/bespokemon2.png" alt="Bespokemon Image 2" />
       </a>
-      <a href="images/bespokemon3.jpg">
-        <img src="images/bespokemon3.jpg" alt="Bespokémon Image 3" />
+      <a href="images/bespokemon3.png">
+        <img src="images/bespokemon3.png" alt="Bespokemon Image 3" />
       </a>
-      <a href="images/bespokemon4.jpg">
-        <img src="images/bespokemon4.jpg" alt="Bespokémon Image 4" />
+      <a href="images/bespokemon4.png">
+        <img src="images/bespokemon4.png" alt="Bespokemon Image 4" />
       </a>
     </div>
 
@@ -191,39 +189,3 @@
             <path d="M12 13.065 1.95 6.525A2 2 0 0 1 4 4h16a2 2 0 0 1 2.05 2.525L12 13.065zm0 2.435 11-7.22V18a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8.28l11 7.22z"/>
           </svg>
         </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal -->
-  <div id="imgModal" class="modal">
-    <span class="close" id="modalClose">&times;</span>
-    <img class="modal-content" id="modalImage" />
-  </div>
-
-  <script>
-    const modal = document.getElementById("imgModal");
-    const modalImg = document.getElementById("modalImage");
-    const modalClose = document.getElementById("modalClose");
-
-    document.querySelectorAll(".gallery a").forEach(link => {
-      link.addEventListener("click", function(e) {
-        e.preventDefault();
-        modal.style.display = "block";
-        modalImg.src = this.href;
-      });
-    });
-
-    modalClose.onclick = function() {
-      modal.style.display = "none";
-    };
-
-    window.onclick = function(event) {
-      if (event.target === modal) {
-        modal.style.display = "none";
-      }
-    };
-  </script>
-
-</body>
-</html>
