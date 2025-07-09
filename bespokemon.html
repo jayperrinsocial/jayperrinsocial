@@ -61,10 +61,6 @@
       gap: 20px;
     }
 
-    .gallery a {
-      display: block;
-    }
-
     .gallery img {
       width: 100%;
       border-radius: 10px;
@@ -73,10 +69,42 @@
       height: 100%;
       background-color: white;
       transition: transform 0.2s ease;
+      cursor: pointer;
     }
 
     .gallery img:hover {
       transform: scale(1.03);
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+    }
+
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      color: #fff;
+      font-size: 36px;
+      font-weight: bold;
+      cursor: pointer;
     }
 
     .footer {
@@ -109,44 +137,6 @@
         font-size: 1rem;
       }
     }
-
-    /* Modal Styles */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 10;
-      padding-top: 60px;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0,0,0,0.85);
-    }
-
-    .modal-content {
-      margin: auto;
-      display: block;
-      max-width: 90%;
-      max-height: 80vh;
-      border-radius: 10px;
-      box-shadow: 0 2px 12px rgba(255,255,255,0.2);
-    }
-
-    .close {
-      position: absolute;
-      top: 25px;
-      right: 35px;
-      color: #fff;
-      font-size: 40px;
-      font-weight: bold;
-      transition: 0.3s;
-      cursor: pointer;
-    }
-
-    .close:hover {
-      color: #ccc;
-    }
   </style>
 </head>
 <body>
@@ -158,22 +148,23 @@
 
     <div class="description">
       <p>
-        <a href="https://www.bespokemon.com/">Bespokemon terrariums</a> create hand crafted, custom-made Pokemon models. The owner, Jamie, brought me on board to head up Facebook and Instagram adverts, in order to boost online sales. </p>
-          </div>
+        Bespokemon is a custom design brand creating bespoke Pokémon-inspired gifts, merchandise and collectibles. <br>
+        I created social media content, branding assets and digital creatives for their product launch.
+      </p>
+    </div>
 
     <div class="gallery">
-      <a href="images/bespokemon1.png">
-        <img src="images/bespokemon1.png" alt="Bespokemon Image 1" />
-      </a>
-      <a href="images/bespokemon2.png">
-        <img src="images/bespokemon2.png" alt="Bespokemon Image 2" />
-      </a>
-      <a href="images/bespokemon3.png">
-        <img src="images/bespokemon3.png" alt="Bespokemon Image 3" />
-      </a>
-      <a href="images/bespokemon4.png">
-        <img src="images/bespokemon4.png" alt="Bespokemon Image 4" />
-      </a>
+      <img src="images/bespokemon1.png" alt="Bespokemon Image 1" onclick="openModal(this)" />
+      <img src="images/bespokemon2.png" alt="Bespokemon Image 2" onclick="openModal(this)" />
+      <img src="images/bespokemon3.png" alt="Bespokemon Image 3" onclick="openModal(this)" />
+      <img src="images/bespokemon4.png" alt="Bespokemon Image 4" onclick="openModal(this)" />
+      <img src="images/bespokemon5.png" alt="Bespokemon Image 5" onclick="openModal(this)" />
+      <img src="images/bespokemon6.png" alt="Bespokemon Image 6" onclick="openModal(this)" />
+    </div>
+
+    <div class="modal" id="imageModal" onclick="closeModal()">
+      <span class="modal-close" onclick="closeModal()">&times;</span>
+      <img class="modal-content" id="modalImage" alt="Full Size Image">
     </div>
 
     <div class="footer">
@@ -189,3 +180,29 @@
             <path d="M12 13.065 1.95 6.525A2 2 0 0 1 4 4h16a2 2 0 0 1 2.05 2.525L12 13.065zm0 2.435 11-7.22V18a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8.28l11 7.22z"/>
           </svg>
         </a>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function openModal(img) {
+      var modal = document.getElementById("imageModal");
+      var modalImg = document.getElementById("modalImage");
+      modal.style.display = "block";
+      modalImg.src = img.src;
+    }
+
+    function closeModal() {
+      document.getElementById("imageModal").style.display = "none";
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === "Escape") {
+        closeModal();
+      }
+    });
+  </script>
+
+</body>
+</html>
