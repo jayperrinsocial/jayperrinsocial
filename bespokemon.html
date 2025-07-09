@@ -9,8 +9,8 @@
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background-color: #f8f8f8;
-      color: #333;
+      background-color: #f4fdfc;
+      color: #2b3d3f;
       text-align: center;
     }
 
@@ -18,7 +18,7 @@
       display: inline-block;
       margin: 20px;
       text-decoration: none;
-      background-color: #000;
+      background-color: #2b3d3f;
       color: #fff;
       padding: 10px 16px;
       border-radius: 5px;
@@ -27,7 +27,7 @@
     }
 
     .back-button:hover {
-      background-color: #333;
+      background-color: #416a6f;
     }
 
     .container {
@@ -61,6 +61,10 @@
       gap: 20px;
     }
 
+    .gallery a {
+      display: block;
+    }
+
     .gallery img {
       width: 100%;
       border-radius: 10px;
@@ -69,42 +73,10 @@
       height: 100%;
       background-color: white;
       transition: transform 0.2s ease;
-      cursor: pointer;
     }
 
     .gallery img:hover {
       transform: scale(1.03);
-    }
-
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 999;
-      padding-top: 60px;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0,0,0,0.8);
-    }
-
-    .modal-content {
-      margin: auto;
-      display: block;
-      max-width: 90%;
-      max-height: 80%;
-      border-radius: 10px;
-    }
-
-    .modal-close {
-      position: absolute;
-      top: 30px;
-      right: 40px;
-      color: #fff;
-      font-size: 36px;
-      font-weight: bold;
-      cursor: pointer;
     }
 
     .footer {
@@ -120,6 +92,29 @@
     .footer-icons a {
       margin: 0 8px;
       display: inline-block;
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+
+    .lightbox:target {
+      display: flex;
     }
 
     @media (max-width: 500px) {
@@ -148,24 +143,26 @@
 
     <div class="description">
       <p>
-        <a href="https://www.bespokemon.com>Bespokemon</a> is a custom design brand creating bespoke Pokémon-inspired gifts, merchandise and collectibles. <br>
-        I created social media content and branding assets for their product launch, and curated online advertisements across a variety of platforms.
-      </p>
+       <a href="https://www.bespokemon.com">Rebalance Chiropractic</a> is a custom design brand creating bespoke Pokémon-inspired gifts, merchandise and collectibles.
+        I created social media content and branding assets for their product launch, and curated online advertisements across a variety of platforms.</p>
     </div>
 
     <div class="gallery">
-      <img src="images/bespokemon1.png" alt="Bespokemon Image 1" onclick="openModal(this)" />
-      <img src="images/bespokemon2.png" alt="Bespokemon Image 2" onclick="openModal(this)" />
-      <img src="images/bespokemon3.png" alt="Bespokemon Image 3" onclick="openModal(this)" />
-      <img src="images/bespokemon4.png" alt="Bespokemon Image 4" onclick="openModal(this)" />
-      <img src="images/bespokemon5.png" alt="Bespokemon Image 5" onclick="openModal(this)" />
-      <img src="images/bespokemon6.png" alt="Bespokemon Image 6" onclick="openModal(this)" />
-    </div>
+      <a href="#img1"><img src="images/bespokemon1.png" alt="Bespokemon Image 1" /></a>
+      <a href="#img2"><img src="images/bespokemon2.png" alt="Bespokemon Image 2" /></a>
+      <a href="#img3"><img src="images/bespokemon3.png" alt="Bespokemon Image 3" /></a>
+      <a href="#img4"><img src="images/bespokemon4.png" alt="Bespokemon Image 4" /></a>
+      <a href="#img3"><img src="images/bespokemon5.png" alt="Bespokemon Image 5" /></a>
+      <a href="#img4"><img src="images/bespokemon6.png" alt="Bespokemon Image 6" /></a>
+     </div>
 
-    <div class="modal" id="imageModal" onclick="closeModal()">
-      <span class="modal-close" onclick="closeModal()">&times;</span>
-      <img class="modal-content" id="modalImage" alt="Full Size Image">
-    </div>
+    <!-- Lightbox popouts -->
+    <div id="img1" class="lightbox" onclick="location.href='#'"><img src="images/bespokemon1.png" alt=""></div>
+    <div id="img2" class="lightbox" onclick="location.href='#'"><img src="images/bespokemon2.png" alt=""></div>
+    <div id="img3" class="lightbox" onclick="location.href='#'"><img src="images/bespokemon3.png" alt=""></div>
+    <div id="img4" class="lightbox" onclick="location.href='#'"><img src="images/bespokemon4.png" alt=""></div>
+    <div id="img5" class="lightbox" onclick="location.href='#'"><img src="images/bespokemon5.png" alt=""></div>
+    <div id="img6" class="lightbox" onclick="location.href='#'"><img src="images/bespokemon6.png" alt=""></div>
 
     <div class="footer">
       <p class="footer-text">© 2025 Jay Perrin | Freelance Digital Marketing</p>
@@ -184,25 +181,5 @@
     </div>
 
   </div>
-
-  <script>
-    function openModal(img) {
-      var modal = document.getElementById("imageModal");
-      var modalImg = document.getElementById("modalImage");
-      modal.style.display = "block";
-      modalImg.src = img.src;
-    }
-
-    function closeModal() {
-      document.getElementById("imageModal").style.display = "none";
-    }
-
-    document.addEventListener('keydown', function(e) {
-      if (e.key === "Escape") {
-        closeModal();
-      }
-    });
-  </script>
-
 </body>
 </html>
