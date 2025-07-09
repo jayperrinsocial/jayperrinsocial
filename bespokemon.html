@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bespokemon Terrariums</title>
+  <title>BES Pokémon</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
   <style>
     body {
@@ -11,6 +11,7 @@
       font-family: 'Poppins', sans-serif;
       background-color: #f8f8f8;
       color: #333;
+      text-align: center;
     }
 
     .back-button {
@@ -33,7 +34,6 @@
       max-width: 1000px;
       margin: 0 auto;
       padding: 40px 20px;
-      text-align: center;
     }
 
     h1 {
@@ -61,6 +61,10 @@
       gap: 20px;
     }
 
+    .gallery a {
+      display: block;
+    }
+
     .gallery img {
       width: 100%;
       border-radius: 10px;
@@ -68,6 +72,26 @@
       object-fit: cover;
       height: 100%;
       background-color: white;
+      transition: transform 0.2s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    .footer {
+      margin-top: 60px;
+      font-size: 0.85rem;
+      color: #777;
+    }
+
+    .footer-icons {
+      margin-top: 10px;
+    }
+
+    .footer-icons a {
+      margin: 0 8px;
+      display: inline-block;
     }
 
     @media (max-width: 500px) {
@@ -85,6 +109,45 @@
         font-size: 1rem;
       }
     }
+
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.85);
+    }
+
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 80vh;
+      border-radius: 10px;
+    }
+
+    .close {
+      position: absolute;
+      top: 30px;
+      right: 35px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #bbb;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
@@ -92,25 +155,75 @@
   <a href="work.html" class="back-button">← Back to Work</a>
 
   <div class="container">
-    <h1>Bespokemon Terrariums</h1>
+    <h1>BES Pokémon</h1>
 
     <div class="description">
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt, magna in varius sollicitudin, 
-        lorem nisi tempor ipsum, et feugiat leo justo non erat. Pellentesque habitant morbi tristique senectus 
-        et netus et malesuada fames ac turpis egestas.
+        BES Pokémon is a passion project and content brand aimed at Pokémon card collectors and fans of competitive play. I worked with the team on creating branded visuals, social media content, and campaign graphics to help grow their online presence.
       </p>
     </div>
 
     <div class="gallery">
-      <img src="images/bespokemon1.jpg" alt="Bespokemon Terrariums Image 1" />
-      <img src="images/bespokemon2.jpg" alt="Bespokemon Terrariums Image 2" />
-      <img src="images/bespokemon3.jpg" alt="Bespokemon Terrariums Image 3" />
-      <img src="images/bespokemon4.jpg" alt="Bespokemon Terrariums Image 4" />
-      <img src="images/bespokemon5.jpg" alt="Bespokemon Terrariums Image 5" />
-      <img src="images/bespokemon6.jpg" alt="Bespokemon Terrariums Image 6" />
+      <a href="images/bespokemon1.jpg">
+        <img src="images/bespokemon1.jpg" alt="BES Pokémon Image 1" />
+      </a>
+      <a href="images/bespokemon2.jpg">
+        <img src="images/bespokemon2.jpg" alt="BES Pokémon Image 2" />
+      </a>
+      <a href="images/bespokemon3.jpg">
+        <img src="images/bespokemon3.jpg" alt="BES Pokémon Image 3" />
+      </a>
+      <a href="images/bespokemon4.jpg">
+        <img src="images/bespokemon4.jpg" alt="BES Pokémon Image 4" />
+      </a>
+    </div>
+
+    <div class="footer">
+      <p class="footer-text">© 2025 Jay Perrin | Freelance Digital Marketing</p>
+      <div class="footer-icons">
+        <a href="https://www.linkedin.com/in/jayperrin/" target="_blank" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#0077b5" viewBox="0 0 24 24">
+            <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V24h-4V8.5zM8.5 8.5h3.6v2.1h.05c.5-.95 1.7-2.1 3.5-2.1 3.7 0 4.4 2.4 4.4 5.5V24h-4v-8.2c0-2 0-4.5-2.75-4.5S12 13.4 12 15.7V24h-4V8.5z"/>
+          </svg>
+        </a>
+        <a href="mailto:contact@jayperrinsocial.co.uk" aria-label="Email">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#333" viewBox="0 0 24 24">
+            <path d="M12 13.065 1.95 6.525A2 2 0 0 1 4 4h16a2 2 0 0 1 2.05 2.525L12 13.065zm0 2.435 11-7.22V18a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8.28l11 7.22z"/>
+          </svg>
+        </a>
+      </div>
     </div>
   </div>
+
+  <!-- Modal -->
+  <div id="imgModal" class="modal">
+    <span class="close" id="modalClose">&times;</span>
+    <img class="modal-content" id="modalImage" />
+  </div>
+
+  <script>
+    const modal = document.getElementById("imgModal");
+    const modalImg = document.getElementById("modalImage");
+    const modalClose = document.getElementById("modalClose");
+
+    document.querySelectorAll(".gallery a").forEach(link => {
+      link.addEventListener("click", function(e) {
+        e.preventDefault();
+        modal.style.display = "block";
+        modalImg.src = this.href;
+      });
+    });
+
+    modalClose.onclick = function() {
+      modal.style.display = "none";
+    };
+
+    window.onclick = function(event) {
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    };
+  </script>
 
 </body>
 </html>
