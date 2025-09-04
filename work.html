@@ -66,7 +66,7 @@
       height: 120px;
       border-radius: 50%;
       background: white;
-      overflow: hidden; /* force logo inside circle */
+      overflow: hidden; /* crop the logo perfectly */
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       text-decoration: none;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -77,12 +77,13 @@
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.18);
     }
 
-    /* Logos fit perfectly inside circle */
+    /* Logos should fill container without white gaps */
     .grid img {
       width: 100%;
       height: 100%;
-      object-fit: cover;  /* fill the circle cleanly */
-      border-radius: 50%; /* ensure it takes the circular shape */
+      object-fit: cover;  /* ensures no stretching but fills the circle */
+      object-position: center; /* keeps logos centered */
+      border-radius: 50%; /* clips them to circle */
     }
 
     .footer {
@@ -103,14 +104,14 @@
     @media (max-width: 768px) {
       .grid {
         grid-template-columns: repeat(3, 1fr);
-        gap: 22px;
+        gap: 20px;
       }
     }
 
     @media (max-width: 480px) {
       .grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
+        gap: 15px;
       }
 
       .grid a {
