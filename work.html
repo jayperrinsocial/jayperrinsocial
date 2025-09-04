@@ -57,17 +57,16 @@
       margin-top: 40px;
     }
 
-    /* Circular panels with inner padding so logos never touch the edge */
+    /* Circular panels */
     .grid a {
       display: flex;
       justify-content: center;
       align-items: center;
       width: 120px;
       height: 120px;
-      padding: 14px;                  /* <-- ensures consistent inset around all logos */
       border-radius: 50%;
-      background: #fff;
-      overflow: hidden;               /* keeps the circle perfectly clean */
+      background: white;
+      overflow: hidden; /* force logo inside circle */
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       text-decoration: none;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -78,13 +77,12 @@
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.18);
     }
 
-    /* Logos centered and fully visible, never cropped */
+    /* Logos fit perfectly inside circle */
     .grid img {
       width: 100%;
       height: 100%;
-      object-fit: contain;            /* keeps full logo visible */
-      display: block;                 /* removes inline gaps */
-      background: transparent;
+      object-fit: cover;  /* fill the circle cleanly */
+      border-radius: 50%; /* ensure it takes the circular shape */
     }
 
     .footer {
@@ -118,7 +116,6 @@
       .grid a {
         width: 100px;
         height: 100px;
-        padding: 12px;               /* keep same relative inset on small screens */
       }
 
       .back-button {
