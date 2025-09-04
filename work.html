@@ -7,9 +7,16 @@
 
   <!-- Google Font: Poppins -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
 
   <style>
+    :root{
+      --panel-size-desktop:120px;
+      --panel-size-mobile:100px;
+      --img-scale-desktop:1.35; /* how much larger than the frame the image should be */
+      --img-scale-tablet:1.25;
+      --img-scale-mobile:1.15;
+    }
+
     body {
       background-color: #f8f8f8;
       color: #333;
@@ -31,6 +38,7 @@
       text-decoration: none;
       font-weight: 500;
       transition: background 0.3s ease;
+      z-index: 50;
     }
 
     .back-button:hover {
@@ -57,33 +65,39 @@
       margin-top: 40px;
     }
 
-    /* Circular panels */
+    /* Circular panel (frame) */
     .grid a {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 120px;
-      height: 120px;
+      position: relative;                 /* for absolutely positioned img */
+      width: var(--panel-size-desktop);
+      height: var(--panel-size-desktop);
       border-radius: 50%;
-      background: white;
-      overflow: hidden; /* crop the logo perfectly */
-      box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+      background: #fff;
+      overflow: hidden;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
       text-decoration: none;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: inline-block;
+      transition: transform 0.28s ease, box-shadow 0.28s ease;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .grid a:hover {
-      transform: scale(1.08);
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.18);
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
     }
 
-    /* Logos should fill container without white gaps */
+    /* Image fills the panel, but scale >1 so built-in white margins get cropped */
     .grid img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;  /* ensures no stretching but fills the circle */
-      object-position: center; /* keeps logos centered */
-      border-radius: 50%; /* clips them to circle */
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: calc(var(--panel-size-desktop) * var(--img-scale-desktop));
+      height: calc(var(--panel-size-desktop) * var(--img-scale-desktop));
+      transform: translate(-50%, -50%);
+      object-fit: cover;       /* fill while preserving aspect ratio */
+      object-position: center; /* centre the logo */
+      border-radius: 50%;      /* keeps the visible image circular */
+      display: block;
+      pointer-events: none;    /* clicks hit the anchor, not the img */
     }
 
     .footer {
@@ -101,22 +115,37 @@
       display: inline-block;
     }
 
+    /* Tablet */
     @media (max-width: 768px) {
       .grid {
         grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
+        gap: 22px;
+      }
+      .grid a {
+        width: 110px;
+        height: 110px;
+      }
+      .grid img {
+        width: calc(110px * var(--img-scale-tablet));
+        height: calc(110px * var(--img-scale-tablet));
       }
     }
 
+    /* Mobile */
     @media (max-width: 480px) {
       .grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+        gap: 16px;
       }
 
       .grid a {
-        width: 100px;
-        height: 100px;
+        width: var(--panel-size-mobile);
+        height: var(--panel-size-mobile);
+      }
+
+      .grid img {
+        width: calc(var(--panel-size-mobile) * var(--img-scale-mobile));
+        height: calc(var(--panel-size-mobile) * var(--img-scale-mobile));
       }
 
       .back-button {
@@ -126,37 +155,49 @@
         font-size: 0.8rem;
       }
     }
+
+    /* Optional: better keyboard focus */
+    .grid a:focus {
+      outline: 3px solid rgba(0,0,0,0.06);
+      outline-offset: 6px;
+    }
+
   </style>
 </head>
 <body>
 
-  <!-- Back to Home button -->
   <a href="index.html" class="back-button">← Back to Home</a>
 
   <div class="container">
     <h1>Portfolio of Work</h1>
     <p>I have worked with a wide range of clients over the years. Here are a selection.</p>
 
-    <div class="grid">
+    <div class="grid" aria-label="Portfolio logos">
       <a href="netninja.html" title="Net Ninja">
         <img src="logos/netninja.jpg" alt="Net Ninja Logo" />
       </a>
+
       <a href="totallysportsinsurance.html" title="Totally Sports Insurance">
         <img src="logos/totally.jpg" alt="Totally Sports Logo" />
       </a>
+
       <a href="jdsports.html" title="JD Sports Ltd.">
         <img src="logos/jdsports.jpg" alt="JD Sports Logo" />
       </a>
+
       <a href="rebalancechiropractic.html" title="Rebalance Chiropractic">
         <img src="logos/rebalance.jpg" alt="Rebalance Chiropractic Logo" />
       </a>
+
       <a href="360studios.html" title="360 Studios Ltd.">
         <img src="logos/360studios.jpg" alt="360 Studios Logo" />
       </a>
+
       <a href="vikings.html" title="Stockport Vikings">
         <img src="logos/vikings.jpg" alt="Stockport Vikings Logo" />
       </a>
-      <a href="bespokemon.html" title="Bespokemon Terrariums">
+
+      <a href="bespokemon.html" title="Bespokemon">
         <img src="logos/bespokemon.jpg" alt="Bespokemon Logo" />
       </a>
     </div>
