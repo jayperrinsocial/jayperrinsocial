@@ -42,15 +42,39 @@
       background-color: #555;
     }
 
-    /* Heading animation */
+    /* Heading shimmer animation */
     h1 {
       font-size: 2.5rem;
       margin-bottom: 40px;
+      position: relative;
+      display: inline-block;
+      overflow: hidden;
+      color: #333;
       opacity: 0;
-      animation: fadeInUp 1s ease forwards;
+      animation: fadeIn 1s ease forwards;
     }
 
-    /* Contact item container */
+    h1::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+      animation: shimmer 2s ease forwards 0.5s;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    @keyframes shimmer {
+      from { left: -100%; }
+      to { left: 100%; }
+    }
+
+    /* Contact items */
     .contact-container {
       display: flex;
       flex-direction: column;
@@ -65,13 +89,12 @@
       font-size: 1.4rem;
       opacity: 0;
       transform: translateY(20px);
-      animation: fadeInUp 0.8s ease forwards;
+      animation: fadeInUp 0.6s ease forwards;
     }
 
-    /* stagger the delays */
-    .contact-item:nth-child(1) { animation-delay: 1.2s; }
-    .contact-item:nth-child(2) { animation-delay: 1.5s; }
-    .contact-item:nth-child(3) { animation-delay: 1.8s; }
+    .contact-item:nth-child(1) { animation-delay: 1s; }
+    .contact-item:nth-child(2) { animation-delay: 1.2s; }
+    .contact-item:nth-child(3) { animation-delay: 1.4s; }
 
     .contact-item svg {
       width: 28px;
@@ -101,16 +124,9 @@
     }
 
     @media (max-width: 600px) {
-      h1 {
-        font-size: 2rem;
-      }
-      .contact-item {
-        font-size: 1.2rem;
-      }
-      .contact-item svg {
-        width: 24px;
-        height: 24px;
-      }
+      h1 { font-size: 2rem; }
+      .contact-item { font-size: 1.2rem; }
+      .contact-item svg { width: 24px; height: 24px; }
     }
   </style>
 </head>
@@ -129,4 +145,16 @@
 
     <div class="contact-item">
       <!-- Phone Icon -->
-      <svg xmlns="http://www.w3.org/2000/svg" fill="#333" viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.07 21 3 13.93 3 5a1 1 0 0 1 1-1h3.5a1
+      <svg xmlns="http://www.w3.org/2000/svg" fill="#333" viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.07 21 3 13.93 3 5a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.24 1.01l-2.21 2.2z"/></svg>
+      <a href="tel:+447909060213">07909060213</a>
+    </div>
+
+    <div class="contact-item">
+      <!-- LinkedIn Icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" fill="#0077b5" viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V24h-4V8.5zM8.5 8.5h3.6v2.1h.05c.5-.95 1.7-2.1 3.5-2.1 3.7 0 4.4 2.4 4.4 5.5V24h-4v-8.2c0-2 0-4.5-2.75-4.5S12 13.4 12 15.7V24h-4V8.5z"/></svg>
+      <a href="https://www.linkedin.com/in/jayperrin/" target="_blank">linkedin.com/in/jayperrin</a>
+    </div>
+  </div>
+
+</body>
+</html>
