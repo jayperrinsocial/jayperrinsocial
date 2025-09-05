@@ -42,10 +42,11 @@
 
     .contact-container {
       max-width: 600px;
+      padding: 20px;
     }
 
     h1 {
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       margin-bottom: 40px;
     }
 
@@ -54,13 +55,14 @@
       align-items: center;
       justify-content: center;
       gap: 15px;
-      margin: 20px 0;
-      font-size: 1.4rem;
+      margin: 25px 0;
+      font-size: 1.2rem;
+      flex-wrap: wrap;
     }
 
     .contact-item svg {
-      width: 28px;
-      height: 28px;
+      width: 36px;
+      height: 36px;
       flex-shrink: 0;
     }
 
@@ -68,10 +70,29 @@
       color: #0077b5;
       text-decoration: none;
       transition: color 0.3s ease;
+      word-break: break-word;
     }
 
     a:hover {
       color: #005580;
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 600px) {
+      .contact-item {
+        flex-direction: column;
+        gap: 10px;
+        font-size: 1.1rem;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .contact-item svg {
+        width: 42px;
+        height: 42px;
+      }
     }
   </style>
 </head>
