@@ -46,12 +46,22 @@
 
     h1 {
       font-size: 2.5rem;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
     }
 
-    p {
-      font-size: 1.5rem;
-      margin: 15px 0;
+    .contact-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      margin: 20px 0;
+      font-size: 1.4rem;
+    }
+
+    .contact-item svg {
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0;
     }
 
     a {
@@ -63,11 +73,6 @@
     a:hover {
       color: #005580;
     }
-
-    .linkedin {
-      margin-top: 25px;
-      font-size: 1.3rem;
-    }
   </style>
 </head>
 <body>
@@ -77,9 +82,30 @@
 
   <div class="contact-container">
     <h1>Get in Touch</h1>
-    <p><strong>Email:</strong> <a href="mailto:jamiesvenperrin@gmail.com">jamiesvenperrin@gmail.com</a></p>
-    <p><strong>Phone:</strong> <a href="tel:+447909060213">07909060213</a></p>
-    <p class="linkedin"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/jayperrin/" target="_blank">jayperrin</a></p>
+
+    <!-- Email -->
+    <div class="contact-item">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="#333" viewBox="0 0 24 24">
+        <path d="M12 13.065 1.95 6.525A2 2 0 0 1 4 4h16a2 2 0 0 1 2.05 2.525L12 13.065zm0 2.435 11-7.22V18a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8.28l11 7.22z"/>
+      </svg>
+      <a href="mailto:jamiesvenperrin@gmail.com">jamiesvenperrin@gmail.com</a>
+    </div>
+
+    <!-- Phone -->
+    <div class="contact-item">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="#333" viewBox="0 0 24 24">
+        <path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.05-.24c1.12.37 2.33.57 3.54.57a1 1 0 0 1 1 1V21a1 1 0 0 1-1 1C10.3 22 2 13.7 2 3a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.21.2 2.42.57 3.54a1 1 0 0 1-.24 1.05l-2.2 2.2z"/>
+      </svg>
+      <a href="tel:+447909060213">07909060213</a>
+    </div>
+
+    <!-- LinkedIn -->
+    <div class="contact-item">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="#0077b5" viewBox="0 0 24 24">
+        <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V24h-4V8.5zM8.5 8.5h3.6v2.1h.05c.5-.95 1.7-2.1 3.5-2.1 3.7 0 4.4 2.4 4.4 5.5V24h-4v-8.2c0-2 0-4.5-2.75-4.5S12 13.4 12 15.7V24h-4V8.5z"/>
+      </svg>
+      <a href="https://www.linkedin.com/in/jayperrin/" target="_blank">linkedin.com/in/jayperrin</a>
+    </div>
   </div>
 
 </body>
