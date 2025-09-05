@@ -10,18 +10,21 @@
 
   <style>
     body {
-      background-color: #f8f8f8;
-      color: #333;
-      font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f8f8;
+      color: #333;
       display: flex;
-      justify-content: center;
-      align-items: flex-start; /* push content to top instead of center */
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
       min-height: 100vh;
       text-align: center;
+      padding: 40px 20px;
     }
 
+    /* Back button */
     .back-button {
       position: absolute;
       top: 20px;
@@ -35,100 +38,95 @@
       font-weight: 500;
       transition: background 0.3s ease;
     }
-
     .back-button:hover {
       background-color: #555;
     }
 
-    .contact-container {
-      max-width: 600px;
-      padding: 20px;
-      margin-top: 60px; /* adjust this value to raise/lower content */
+    /* Heading animation */
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      opacity: 0;
+      animation: fadeInUp 1s ease forwards;
     }
 
-    h1 {
-      font-size: 2.2rem;
-      margin-bottom: 40px;
+    /* Contact item container */
+    .contact-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
     }
 
     .contact-item {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 15px;
-      margin: 25px 0;
-      font-size: 1.2rem;
-      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 1.4rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s ease forwards;
     }
 
+    /* stagger the delays */
+    .contact-item:nth-child(1) { animation-delay: 1.2s; }
+    .contact-item:nth-child(2) { animation-delay: 1.5s; }
+    .contact-item:nth-child(3) { animation-delay: 1.8s; }
+
     .contact-item svg {
-      width: 36px;
-      height: 36px;
+      width: 28px;
+      height: 28px;
       flex-shrink: 0;
     }
 
     a {
-      color: #0077b5;
+      color: #333;
       text-decoration: none;
+      font-weight: 500;
       transition: color 0.3s ease;
-      word-break: break-word;
     }
-
     a:hover {
-      color: #005580;
+      color: #0077b5;
     }
 
-    /* Mobile adjustments */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     @media (max-width: 600px) {
-      .contact-item {
-        flex-direction: column;
-        gap: 10px;
-        font-size: 1.1rem;
-      }
-
       h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
       }
-
+      .contact-item {
+        font-size: 1.2rem;
+      }
       .contact-item svg {
-        width: 42px;
-        height: 42px;
+        width: 24px;
+        height: 24px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Back to Home button -->
   <a href="index.html" class="back-button">← Back to Home</a>
 
-  <div class="contact-container">
-    <h1>Get in Touch</h1>
+  <h1>Get in Touch</h1>
 
-    <!-- Email -->
+  <div class="contact-container">
     <div class="contact-item">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="#333" viewBox="0 0 24 24">
-        <path d="M12 13.065 1.95 6.525A2 2 0 0 1 4 4h16a2 2 0 0 1 2.05 2.525L12 13.065zm0 2.435 11-7.22V18a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8.28l11 7.22z"/>
-      </svg>
+      <!-- Email Icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" fill="#333" viewBox="0 0 24 24"><path d="M12 13.065 1.95 6.525A2 2 0 0 1 4 4h16a2 2 0 0 1 2.05 2.525L12 13.065zm0 2.435 11-7.22V18a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8.28l11 7.22z"/></svg>
       <a href="mailto:jamiesvenperrin@gmail.com">jamiesvenperrin@gmail.com</a>
     </div>
 
-    <!-- Phone -->
     <div class="contact-item">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="#333" viewBox="0 0 24 24">
-        <path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.05-.24c1.12.37 2.33.57 3.54.57a1 1 0 0 1 1 1V21a1 1 0 0 1-1 1C10.3 22 2 13.7 2 3a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.21.2 2.42.57 3.54a1 1 0 0 1-.24 1.05l-2.2 2.2z"/>
-      </svg>
-      <a href="tel:+447909060213">07909060213</a>
-    </div>
-
-    <!-- LinkedIn -->
-    <div class="contact-item">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="#0077b5" viewBox="0 0 24 24">
-        <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V24h-4V8.5zM8.5 8.5h3.6v2.1h.05c.5-.95 1.7-2.1 3.5-2.1 3.7 0 4.4 2.4 4.4 5.5V24h-4v-8.2c0-2 0-4.5-2.75-4.5S12 13.4 12 15.7V24h-4V8.5z"/>
-      </svg>
-      <a href="https://www.linkedin.com/in/jayperrin/" target="_blank">linkedin.com/in/jayperrin</a>
-    </div>
-  </div>
-
-</body>
-</html>
+      <!-- Phone Icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" fill="#333" viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.07 21 3 13.93 3 5a1 1 0 0 1 1-1h3.5a1
