@@ -5,10 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Jay Perrin Social</title>
 
-  <!-- ✅ Add Google Fonts for Poppins -->
+  <!-- ✅ Google Fonts: Poppins -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="styles.css" />
 
   <style>
     body {
@@ -31,22 +29,31 @@
       height: 150px;
       border-radius: 50%;
       object-fit: cover;
-      margin-bottom: 10px; /* ⬅ reduced from 20px */
+      margin-bottom: 10px;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
     }
 
     h1 {
       font-size: 2.5rem;
       margin-bottom: 10px;
       font-weight: 600;
-      margin-top: 0; /* ⬅ ensure no extra space */
+      margin-top: 0;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+      animation-delay: 0.6s;
     }
 
     p {
       font-size: 1.1rem;
       line-height: 1.6;
       font-weight: 300;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+      animation-delay: 1s;
     }
 
+    /* Button container */
     .links-vertical {
       display: flex;
       flex-direction: column;
@@ -65,27 +72,51 @@
       text-decoration: none;
       width: fit-content;
       min-width: 180px;
-      background-color: #333;
-      transition: background 0.3s ease;
+      opacity: 0; /* start hidden for animation */
     }
 
-    .links-vertical .btn.work {
-      background-color: #d84315;
-    }
-
-    .links-vertical .btn.contact {
-      background-color: #007acc;
-    }
-
-    .links-vertical .btn.audit {
-      background-color: #10b981;
-    }
+    /* Button colors */
+    .links-vertical .btn.work { background-color: #d84315; }
+    .links-vertical .btn.contact { background-color: #007acc; }
+    .links-vertical .btn.audit { background-color: #10b981; }
 
     .links-vertical .btn:hover {
       opacity: 0.9;
     }
 
+    /* Button fly-in animations */
+    .btn.fly-left { 
+      animation: flyInLeft 0.6s ease forwards; 
+    }
+    .btn.fly-right { 
+      animation: flyInRight 0.6s ease forwards; 
+    }
+
+    .btn.work { animation-delay: 1.3s; }
+    .btn.contact { animation-delay: 1.5s; }
+    .btn.audit { animation-delay: 1.7s; }
+
+    @keyframes flyInLeft {
+      from { opacity: 0; transform: translateX(-100px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes flyInRight {
+      from { opacity: 0; transform: translateX(100px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    /* Fade-in animation for image, header, paragraph */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Footer fade animation */
     .footer {
+      opacity: 0;
+      animation: fadeInFooter 1s ease forwards;
+      animation-delay: 2.4s; /* starts after all buttons fly in */
       margin-top: 60px;
       font-size: 0.85rem;
       color: #777;
@@ -98,6 +129,18 @@
     .footer-icons a {
       margin: 0 8px;
       display: inline-block;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2rem; }
+      p { font-size: 1rem; }
+      .links-vertical .btn { min-width: 140px; }
+      .footer-icons svg { width: 20px; height: 20px; }
+    }
+
+    @keyframes fadeInFooter {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
   </style>
 </head>
@@ -113,10 +156,9 @@
     </p>
 
     <div class="links-vertical">
-      
-      <a href="work.html" target="_blank" class="btn work">Portfolio of Work</a>
-      <a href="contact.html" target="_blank" class="btn contact">Contact Me</a>
-      <a href="audit.html" target="_blank" class="btn audit">Request Free Audit</a>
+      <a href="work.html" target="_blank" class="btn work fly-left">Portfolio of Work</a>
+      <a href="contact.html" target="_blank" class="btn contact fly-right">Contact Me</a>
+      <a href="audit.html" target="_blank" class="btn audit fly-left">Request Free Audit</a>
     </div>
 
     <div class="footer">
