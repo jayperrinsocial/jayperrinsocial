@@ -81,12 +81,22 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 115%;
-      height: 115%;
       transform: translate(-50%, -50%);
       object-fit: cover;
       border-radius: 50%;
     }
+
+    /* Default scale */
+    .grid img { width: 115%; height: 115%; }
+
+    /* Per-logo fine-tuning */
+    .logo-netninja   { width: 110%; height: 110%; }
+    .logo-totally    { width: 120%; height: 120%; }
+    .logo-jdsports   { width: 115%; height: 115%; }
+    .logo-rebalance  { width: 118%; height: 118%; }
+    .logo-360studios { width: 112%; height: 112%; }
+    .logo-vikings    { width: 120%; height: 120%; }
+    .logo-bespokemon { width: 110%; height: 110%; }
 
     .footer {
       margin-top: 60px;
@@ -141,25 +151,25 @@
 
     <div class="grid">
       <a href="netninja.html" title="Net Ninja">
-        <img src="logos/netninja.jpg" alt="Net Ninja Logo" />
+        <img src="logos/netninja.jpg" alt="Net Ninja Logo" class="logo-netninja" />
       </a>
       <a href="totallysportsinsurance.html" title="Totally Sports Insurance">
-        <img src="logos/totally.jpg" alt="Totally Sports Logo" />
+        <img src="logos/totally.jpg" alt="Totally Sports Logo" class="logo-totally" />
       </a>
       <a href="jdsports.html" title="JD Sports Ltd.">
-        <img src="logos/jdsports.jpg" alt="JD Sports Logo" />
+        <img src="logos/jdsports.jpg" alt="JD Sports Logo" class="logo-jdsports" />
       </a>
       <a href="rebalancechiropractic.html" title="Rebalance Chiropractic">
-        <img src="logos/rebalance.jpg" alt="Rebalance Chiropractic Logo" />
+        <img src="logos/rebalance.jpg" alt="Rebalance Chiropractic Logo" class="logo-rebalance" />
       </a>
       <a href="360studios.html" title="360 Studios Ltd.">
-        <img src="logos/360studios.jpg" alt="360 Studios Logo" />
+        <img src="logos/360studios.jpg" alt="360 Studios Logo" class="logo-360studios" />
       </a>
       <a href="vikings.html" title="Stockport Vikings">
-        <img src="logos/vikings.jpg" alt="Stockport Vikings Logo" />
+        <img src="logos/vikings.jpg" alt="Stockport Vikings Logo" class="logo-vikings" />
       </a>
       <a href="bespokemon.html" title="Bespokemon Terrariums">
-        <img src="logos/bespokemon.jpg" alt="Bespokemon Logo" />
+        <img src="logos/bespokemon.jpg" alt="Bespokemon Logo" class="logo-bespokemon" />
       </a>
     </div>
 
