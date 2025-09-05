@@ -17,7 +17,7 @@
       padding: 0;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start; /* push content to top instead of center */
       min-height: 100vh;
       text-align: center;
     }
@@ -43,6 +43,7 @@
     .contact-container {
       max-width: 600px;
       padding: 20px;
+      margin-top: 60px; /* adjust this value to raise/lower content */
     }
 
     h1 {
