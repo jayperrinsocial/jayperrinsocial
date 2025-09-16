@@ -2,116 +2,128 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jay Perrin | Freelance Digital Marketing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jay Perrin Social</title>
 
-  <!-- Google Font: Poppins -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <!-- ✅ Google Fonts: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/png" href="favicon.png">
 
   <style>
     body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9f9f9;
       margin: 0;
       padding: 0;
-      font-family: 'Poppins', sans-serif;
-      background-color: #f8f8f8;
+      text-align: center;
       color: #333;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh; /* full height */
     }
 
-    .content {
-      flex: 1; /* pushes footer down */
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 60px 20px;
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    img.flicker-effect {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
     }
 
     h1 {
-      font-size: 2.8rem;
-      margin-bottom: 20px;
-      opacity: 0;
-      animation: fadeInDown 1s ease forwards;
-    }
-
-    h2 {
-      font-size: 1.5rem;
-      font-weight: 400;
-      margin-bottom: 40px;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      font-weight: 600;
+      margin-top: 0;
       opacity: 0;
       animation: fadeIn 1s ease forwards;
-      animation-delay: 0.5s;
+      animation-delay: 0.6s;
     }
 
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeIn {
-      to { opacity: 1; }
-    }
-
-    .buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      font-weight: 300;
       opacity: 0;
       animation: fadeIn 1s ease forwards;
       animation-delay: 1s;
     }
 
-    .btn {
-      padding: 14px 28px;
+    /* Button container */
+    .links-vertical {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 30px;
+      gap: 15px;
+    }
+
+    .links-vertical .btn {
+      padding: 12px 24px;
       font-size: 1rem;
-      border: none;
+      font-weight: 600;
       border-radius: 6px;
-      cursor: pointer;
-      text-decoration: none;
-      font-weight: 500;
-      transition: background-color 0.3s ease;
-    }
-
-    .btn-primary {
-      background-color: #1a73e8;
-      color: white;
-    }
-    .btn-primary:hover {
-      background-color: #155ab6;
-    }
-
-    .btn-secondary {
-      background-color: #333;
-      color: white;
-    }
-    .btn-secondary:hover {
-      background-color: #555;
-    }
-
-    /* Footer full-width with blue-grey background */
-    .footer {
-      width: 100%;
-      background-color: #2c3e50;
-      color: #eee;
       text-align: center;
-      padding: 20px 0;
-      margin-top: auto; /* pushes to bottom */
-      opacity: 0;
-      animation: fadeInFooter 1s ease forwards;
-      animation-delay: 1.5s;
+      color: white;
+      text-decoration: none;
+      width: fit-content;
+      min-width: 180px;
+      opacity: 0; /* start hidden for animation */
     }
 
-    @keyframes fadeInFooter {
+    /* Button colors */
+    .links-vertical .btn.work { background-color: #d84315; }
+    .links-vertical .btn.contact { background-color: #007acc; }
+    .links-vertical .btn.audit { background-color: #10b981; }
+
+    .links-vertical .btn:hover {
+      opacity: 0.9;
+    }
+
+    /* Button fly-in animations */
+    .btn.fly-left { animation: flyInLeft 0.6s ease forwards; }
+    .btn.fly-right { animation: flyInRight 0.6s ease forwards; }
+
+    .btn.work { animation-delay: 1.3s; }
+    .btn.contact { animation-delay: 1.5s; }
+    .btn.audit { animation-delay: 1.7s; }
+
+    @keyframes flyInLeft {
+      from { opacity: 0; transform: translateX(-100px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes flyInRight {
+      from { opacity: 0; transform: translateX(100px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    /* Fade-in animation for image, header, paragraph */
+    @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
 
+    /* Footer styling */
+    .footer {
+      opacity: 0;
+      animation: fadeInFooter 1s ease forwards;
+      animation-delay: 2.4s; /* starts after all buttons fly in */
+      margin-top: 60px;
+      padding: 20px;
+      font-size: 0.85rem;
+      background-color: #34495e; /* Blue-grey */
+      color: #eee;
+    }
+
     .footer-text {
       margin: 0;
-      font-size: 0.9rem; /* consistent with contact page */
     }
 
     .footer-icons {
@@ -124,34 +136,42 @@
     }
 
     .footer-icons svg {
-      width: 22px;
-      height: 22px;
       fill: #eee;
       transition: fill 0.3s ease;
     }
 
     .footer-icons a:hover svg {
-      fill: #1a73e8;
+      fill: #fff;
     }
 
     @media (max-width: 600px) {
       h1 { font-size: 2rem; }
-      h2 { font-size: 1.2rem; }
-      .btn { font-size: 0.9rem; padding: 12px 22px; }
+      p { font-size: 1rem; }
+      .links-vertical .btn { min-width: 140px; }
       .footer-icons svg { width: 20px; height: 20px; }
+    }
+
+    @keyframes fadeInFooter {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
   </style>
 </head>
 <body>
+  <div class="container">
+    <img src="me.jpg" alt="Jay Perrin" class="flicker-effect">
+    <h1>Jay Perrin Social</h1>
+    <p>
+      Manchester based, I have 10+ years’ experience in <b>social media management</b> and <b>paid advertising</b>. 
+      <br>
+      I help businesses grow their online presence, generate leads, and gain customers. 
+      <br>If you want reliable and dedicated expert help, please get in touch.
+    </p>
 
-  <div class="content">
-    <h1>Jay Perrin</h1>
-    <h2>Freelance Digital Marketing</h2>
-
-    <div class="buttons">
-      <a href="work.html" class="btn btn-primary">View My Work</a>
-      <a href="audit.html" class="btn btn-secondary">Request an Audit</a>
-      <a href="contact.html" class="btn btn-secondary">Contact Me</a>
+    <div class="links-vertical">
+      <a href="work.html" target="_blank" class="btn work fly-left">Portfolio of Work</a>
+      <a href="contact.html" target="_blank" class="btn contact fly-right">Contact Me</a>
+      <a href="audit.html" target="_blank" class="btn audit fly-left">Request Free Audit</a>
     </div>
   </div>
 
@@ -159,17 +179,16 @@
     <p class="footer-text">© 2025 Jay Perrin | Freelance Digital Marketing</p>
     <div class="footer-icons">
       <a href="https://www.linkedin.com/in/jayperrin/" target="_blank" aria-label="LinkedIn">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24">
           <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V24h-4V8.5zM8.5 8.5h3.6v2.1h.05c.5-.95 1.7-2.1 3.5-2.1 3.7 0 4.4 2.4 4.4 5.5V24h-4v-8.2c0-2 0-4.5-2.75-4.5S12 13.4 12 15.7V24h-4V8.5z"/>
         </svg>
       </a>
-      <a href="mailto:contact@jayperrinsocial.co.uk" aria-label="Email">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <a href="mailto:jamiesvenperrin@gmail.com" aria-label="Email">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24">
           <path d="M12 13.065 1.95 6.525A2 2 0 0 1 4 4h16a2 2 0 0 1 2.05 2.525L12 13.065zm0 2.435 11-7.22V18a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8.28l11 7.22z"/>
         </svg>
       </a>
     </div>
   </div>
-
 </body>
 </html>
