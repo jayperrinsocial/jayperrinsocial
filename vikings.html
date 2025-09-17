@@ -6,17 +6,35 @@
   <title>Stockport Vikings</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
   <style>
-    body {
+    html, body {
+      height: 100%;
       margin: 0;
+    }
+
+    body {
       font-family: 'Poppins', sans-serif;
       background-color: #f8f8f8;
       color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
       text-align: center;
     }
 
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      box-sizing: border-box;
+      width: 100%;
+    }
+
     .back-button {
-      display: inline-block;
-      margin: 20px;
+      align-self: flex-start;
+      margin-bottom: 20px;
+      margin-left: 20px;
       text-decoration: none;
       background-color: #000;
       color: #fff;
@@ -24,6 +42,7 @@
       border-radius: 5px;
       font-size: 0.95rem;
       transition: background-color 0.3s ease;
+      display: inline-block;
     }
 
     .back-button:hover {
@@ -33,7 +52,9 @@
     .container {
       max-width: 1000px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 0 20px;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     h1 {
@@ -44,9 +65,7 @@
     }
 
     @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
+      to { opacity: 1; }
     }
 
     .description {
@@ -108,81 +127,88 @@
       cursor: pointer;
     }
 
+    /* Footer styling (consistent) */
     .footer {
-      margin-top: 60px;
+      width: 100%;
+      background-color: #34495e;
+      color: #eee;
+      padding: 20px;
       font-size: 0.85rem;
-      color: #777;
+      text-align: center;
+      box-sizing: border-box;
+      flex-shrink: 0;
+      opacity: 0;
+      animation: fadeInFooter 0.9s ease forwards;
+      animation-delay: 1.5s;
     }
 
-    .footer-icons {
-      margin-top: 10px;
-    }
+    .footer-text { margin: 0; }
+    .footer-icons { margin-top: 10px; }
+    .footer-icons a { margin: 0 8px; display: inline-block; }
+    .footer-icons svg { width: 22px; height: 22px; fill: #eee; transition: fill 0.25s ease, transform 0.2s ease; vertical-align: middle; }
+    .footer-icons a:hover svg { fill: #fff; transform: scale(1.05); }
 
-    .footer-icons a {
-      margin: 0 8px;
-      display: inline-block;
+    @keyframes fadeInFooter {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     @media (max-width: 500px) {
       .back-button {
         font-size: 0.85rem;
         padding: 8px 12px;
-        margin: 15px;
+        margin-left: 15px;
       }
-
-      h1 {
-        font-size: 1.8rem;
-      }
-
-      .description {
-        font-size: 1rem;
-      }
+      h1 { font-size: 1.8rem; }
+      .description { font-size: 1rem; }
+      .footer-icons svg { width: 20px; height: 20px; }
     }
   </style>
 </head>
 <body>
 
-  <a href="work.html" class="back-button">← Back to Work</a>
+  <main>
+    <a href="work.html" class="back-button">← Back to Work</a>
 
-  <div class="container">
-    <h1>Stockport Vikings</h1>
+    <div class="container">
+      <h1>Stockport Vikings</h1>
 
-    <div class="description">
-      <p>
-        <a href="https://stockportvikings.com/">Stockport Vikings</a> are a Football club based in Stockport, Greater Manchester. The owner, Shaun, brought me on board to take care of the social media and graphic design for their kids' teams. 
-      </p>
-    </div>
+      <div class="description">
+        <p>
+          <a href="https://stockportvikings.com/">Stockport Vikings</a> are a Football club based in Stockport, Greater Manchester. The owner, Shaun, brought me on board to take care of the social media and graphic design for their kids' teams. 
+        </p>
+      </div>
 
-    <div class="gallery">
-      <img src="images/vikings1.png" alt="Stockport Vikings Image 1" onclick="openModal(this)" />
-      <img src="images/vikings2.png" alt="Stockport Vikings Image 2" onclick="openModal(this)" />
-      <img src="images/vikings3.png" alt="Stockport Vikings Image 3" onclick="openModal(this)" />
-      <img src="images/vikings4.png" alt="Stockport Vikings Image 4" onclick="openModal(this)" />
-      <img src="images/vikings5.png" alt="Stockport Vikings Image 5" onclick="openModal(this)" />
-      <img src="images/vikings6.png" alt="Stockport Vikings Image 6" onclick="openModal(this)" />
-    </div>
+      <div class="gallery">
+        <img src="images/vikings1.png" alt="Stockport Vikings Image 1" onclick="openModal(this)" />
+        <img src="images/vikings2.png" alt="Stockport Vikings Image 2" onclick="openModal(this)" />
+        <img src="images/vikings3.png" alt="Stockport Vikings Image 3" onclick="openModal(this)" />
+        <img src="images/vikings4.png" alt="Stockport Vikings Image 4" onclick="openModal(this)" />
+        <img src="images/vikings5.png" alt="Stockport Vikings Image 5" onclick="openModal(this)" />
+        <img src="images/vikings6.png" alt="Stockport Vikings Image 6" onclick="openModal(this)" />
+      </div>
 
-    <div class="modal" id="imageModal" onclick="closeModal()">
-      <span class="modal-close" onclick="closeModal()">&times;</span>
-      <img class="modal-content" id="modalImage" alt="Full Size Image">
-    </div>
-
-    <div class="footer">
-      <p class="footer-text">© 2025 Jay Perrin | Freelance Digital Marketing</p>
-      <div class="footer-icons">
-        <a href="https://www.linkedin.com/in/jayperrin/" target="_blank" aria-label="LinkedIn">
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#0077b5" viewBox="0 0 24 24">
-            <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V24h-4V8.5zM8.5 8.5h3.6v2.1h.05c.5-.95 1.7-2.1 3.5-2.1 3.7 0 4.4 2.4 4.4 5.5V24h-4v-8.2c0-2 0-4.5-2.75-4.5S12 13.4 12 15.7V24h-4V8.5z"/>
-          </svg>
-        </a>
-        <a href="mailto:contact@jayperrinsocial.co.uk" aria-label="Email">
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#333" viewBox="0 0 24 24">
-            <path d="M12 13.065 1.95 6.525A2 2 0 0 1 4 4h16a2 2 0 0 1 2.05 2.525L12 13.065zm0 2.435 11-7.22V18a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8.28l11 7.22z"/>
-          </svg>
-        </a>
+      <div class="modal" id="imageModal" onclick="closeModal()">
+        <span class="modal-close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage" alt="Full Size Image">
       </div>
     </div>
+  </main>
 
+  <div class="footer">
+    <p class="footer-text">© 2025 Jay Perrin | Freelance Digital Marketing</p>
+    <div class="footer-icons">
+      <a href="https://www.linkedin.com/in/jayperrin/" target="_blank" aria-label="LinkedIn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V24h-4V8.5zM8.5 8.5h3.6v2.1h.05c.5-.95 1.7-2.1 3.5-2.1 3.7 0 4.4 2.4 4.4 5.5V24h-4v-8.2c0-2 0-4.5-2.75-4.5S12 13.4 12 15.7V24h-4V8.5z"/>
+        </svg>
+      </a>
+      <a href="mailto:contact@jayperrinsocial.co.uk" aria-label="Email">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M12 13.065 1.95 6.525A2 2 0 0 1 4 4h16a2 2 0 0 1 2.05 2.525L12 13.065zm0 2.435 11-7.22V18a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8.28l11 7.22z"/>
+        </svg>
+      </a>
+    </div>
   </div>
 
   <script>
