@@ -8,9 +8,8 @@
   <!-- Google Font: Poppins -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-<link rel="icon" type="image/png" href="favicon.png">
+  <link rel="icon" type="image/png" href="favicon.png">
   <style>
-    /* Ensure page fills viewport and footer can be pushed to bottom */
     html, body {
       height: 100%;
       margin: 0;
@@ -23,8 +22,6 @@
       margin: 0;
       padding: 0;
       text-align: center;
-
-      /* Layout so footer can be anchored */
       display: flex;
       flex-direction: column;
       min-height: 100vh;
@@ -48,7 +45,6 @@
       background-color: #555;
     }
 
-    /* main content container grows to push footer down */
     .container {
       max-width: 1000px;
       margin: 80px auto 50px;
@@ -84,14 +80,11 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       text-decoration: none;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-
-      /* Animation start */
       opacity: 0;
       transform: scale(0.5);
       animation: popIn 0.5s ease forwards;
     }
 
-    /* Staggered delays */
     .grid a:nth-child(1) { animation-delay: 0.2s; }
     .grid a:nth-child(2) { animation-delay: 0.4s; }
     .grid a:nth-child(3) { animation-delay: 0.6s; }
@@ -99,6 +92,7 @@
     .grid a:nth-child(5) { animation-delay: 1s; }
     .grid a:nth-child(6) { animation-delay: 1.2s; }
     .grid a:nth-child(7) { animation-delay: 1.4s; }
+    .grid a:nth-child(8) { animation-delay: 1.6s; }
 
     @keyframes popIn {
       0% { opacity: 0; transform: scale(0.5); }
@@ -120,10 +114,8 @@
       border-radius: 50%;
     }
 
-    /* Default scale */
     .grid img { width: 115%; height: 115%; }
 
-    /* Per-logo fine-tuning */
     .logo-netninja   { width: 110%; height: 110%; }
     .logo-totally    { width: 120%; height: 120%; }
     .logo-jdsports   { width: 115%; height: 115%; }
@@ -131,21 +123,17 @@
     .logo-360studios { width: 112%; height: 112%; }
     .logo-vikings    { width: 120%; height: 120%; }
     .logo-bespokemon { width: 110%; height: 110%; }
+    .logo-cornell    { width: 115%; height: 115%; }
 
-    /* Footer (full-width blue-grey, pinned to bottom) */
     .footer {
       width: 100%;
-      background-color: #34495e; /* Blue-grey */
+      background-color: #34495e;
       color: #eee;
       padding: 20px;
-      font-size: 0.9rem; /* consistent with other pages */
+      font-size: 0.9rem;
       box-sizing: border-box;
-
-      /* ensure it stays visible at bottom */
       margin-top: 0;
       flex-shrink: 0;
-
-      /* Fade-in after logos */
       opacity: 0;
       animation: fadeInFooter 1s ease forwards;
       animation-delay: 2s;
@@ -156,19 +144,9 @@
       to { opacity: 1; }
     }
 
-    .footer-text {
-      margin: 0;
-    }
-
-    .footer-icons {
-      margin-top: 10px;
-    }
-
-    .footer-icons a {
-      margin: 0 10px;
-      display: inline-block;
-    }
-
+    .footer-text { margin: 0; }
+    .footer-icons { margin-top: 10px; }
+    .footer-icons a { margin: 0 10px; display: inline-block; }
     .footer-icons svg {
       width: 22px;
       height: 22px;
@@ -176,29 +154,15 @@
       transition: fill 0.3s ease;
       vertical-align: middle;
     }
-
-    .footer-icons a:hover svg {
-      fill: #fff;
-    }
+    .footer-icons a:hover svg { fill: #fff; }
 
     @media (max-width: 768px) {
-      .grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-      }
+      .grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
     }
 
     @media (max-width: 480px) {
-      .grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-      }
-
-      .grid a {
-        width: 100px;
-        height: 100px;
-      }
-
+      .grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+      .grid a { width: 100px; height: 100px; }
       .back-button {
         top: 10px;
         left: 10px;
@@ -210,7 +174,6 @@
 </head>
 <body>
 
-  <!-- Back to Home button -->
   <a href="index.html" class="back-button">← Back to Home</a>
 
   <div class="container">
@@ -239,6 +202,9 @@
       </a>
       <a href="bespokemon.html" title="Bespokemon Terrariums">
         <img src="logos/bespokemon.jpg" alt="Bespokemon Logo" class="logo-bespokemon" />
+      </a>
+      <a href="cornell.html" title="Cornell">
+        <img src="logos/cornell.png" alt="Cornell Logo" class="logo-cornell" />
       </a>
     </div>
   </div>
