@@ -9,31 +9,36 @@
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background-color: #f4fdfc;
-      color: #2b3d3f;
+      background-color: #ffffff;
+      color: #333;
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
     .back-button {
       display: inline-block;
       margin: 20px;
       text-decoration: none;
-      background-color: #2b3d3f;
+      background-color: #333;
       color: #fff;
       padding: 10px 16px;
       border-radius: 5px;
       font-size: 0.95rem;
       transition: background-color 0.3s ease;
+      align-self: flex-start;
     }
 
     .back-button:hover {
-      background-color: #416a6f;
+      background-color: #555;
     }
 
     .container {
       max-width: 1000px;
       margin: 0 auto;
       padding: 40px 20px;
+      flex: 1;
     }
 
     h1 {
@@ -53,6 +58,7 @@
       font-size: 1.1rem;
       line-height: 1.7;
       margin-bottom: 40px;
+      color: #555;
     }
 
     .gallery {
@@ -71,7 +77,7 @@
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       object-fit: cover;
       height: 100%;
-      background-color: white;
+      background-color: #fff;
       transition: transform 0.2s ease;
     }
 
@@ -79,14 +85,22 @@
       transform: scale(1.03);
     }
 
+    /* Footer styling */
     .footer {
-      margin-top: 60px;
-      font-size: 0.85rem;
-      color: #777;
+      background-color: #34495e;
+      color: #fff;
+      padding: 25px 15px;
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: auto;
+    }
+
+    .footer-text {
+      margin: 0;
     }
 
     .footer-icons {
-      margin-top: 10px;
+      margin-top: 12px;
     }
 
     .footer-icons a {
@@ -94,6 +108,15 @@
       display: inline-block;
     }
 
+    .footer-icons svg {
+      transition: transform 0.2s ease;
+    }
+
+    .footer-icons svg:hover {
+      transform: scale(1.2);
+    }
+
+    /* Lightbox styling */
     .lightbox {
       display: none;
       position: fixed;
@@ -143,8 +166,9 @@
 
     <div class="description">
       <p>
-       <a href="https://www.bespokemon.com">Bespokemon</a> is a custom design brand creating bespoke Pokémon-inspired gifts, merchandise and collectibles.
-        I created social media content and branding assets for their product launch, and curated online advertisements across a variety of platforms.</p>
+        <a href="https://www.bespokemon.com">Bespokemon</a> is a custom design brand creating bespoke Pokémon-inspired gifts, merchandise and collectibles.
+        I created social media content and branding assets for their product launch, and curated online advertisements across a variety of platforms.
+      </p>
     </div>
 
     <div class="gallery">
@@ -154,7 +178,7 @@
       <a href="#img4"><img src="images/bespokemon4.png" alt="Bespokemon Image 4" /></a>
       <a href="#img5"><img src="images/bespokemon5.png" alt="Bespokemon Image 5" /></a>
       <a href="#img6"><img src="images/bespokemon6.png" alt="Bespokemon Image 6" /></a>
-     </div>
+    </div>
 
     <!-- Lightbox popouts -->
     <div id="img1" class="lightbox" onclick="location.href='#'"><img src="images/bespokemon1.png" alt=""></div>
@@ -163,23 +187,23 @@
     <div id="img4" class="lightbox" onclick="location.href='#'"><img src="images/bespokemon4.png" alt=""></div>
     <div id="img5" class="lightbox" onclick="location.href='#'"><img src="images/bespokemon5.png" alt=""></div>
     <div id="img6" class="lightbox" onclick="location.href='#'"><img src="images/bespokemon6.png" alt=""></div>
-
-    <div class="footer">
-      <p class="footer-text">© 2025 Jay Perrin | Freelance Digital Marketing</p>
-      <div class="footer-icons">
-        <a href="https://www.linkedin.com/in/jayperrin/" target="_blank" aria-label="LinkedIn">
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#0077b5" viewBox="0 0 24 24">
-            <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V24h-4V8.5zM8.5 8.5h3.6v2.1h.05c.5-.95 1.7-2.1 3.5-2.1 3.7 0 4.4 2.4 4.4 5.5V24h-4v-8.2c0-2 0-4.5-2.75-4.5S12 13.4 12 15.7V24h-4V8.5z"/>
-          </svg>
-        </a>
-        <a href="mailto:contact@jayperrinsocial.co.uk" aria-label="Email">
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#333" viewBox="0 0 24 24">
-            <path d="M12 13.065 1.95 6.525A2 2 0 0 1 4 4h16a2 2 0 0 1 2.05 2.525L12 13.065zm0 2.435 11-7.22V18a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8.28l11 7.22z"/>
-          </svg>
-        </a>
-      </div>
-    </div>
-
   </div>
+
+  <div class="footer">
+    <p class="footer-text">© 2025 Jay Perrin | Freelance Digital Marketing</p>
+    <div class="footer-icons">
+      <a href="https://www.linkedin.com/in/jayperrin/" target="_blank" aria-label="LinkedIn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#0077b5" viewBox="0 0 24 24">
+          <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V24h-4V8.5zM8.5 8.5h3.6v2.1h.05c.5-.95 1.7-2.1 3.5-2.1 3.7 0 4.4 2.4 4.4 5.5V24h-4v-8.2c0-2 0-4.5-2.75-4.5S12 13.4 12 15.7V24h-4V8.5z"/>
+        </svg>
+      </a>
+      <a href="mailto:contact@jayperrinsocial.co.uk" aria-label="Email">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#fff" viewBox="0 0 24 24">
+          <path d="M12 13.065 1.95 6.525A2 2 0 0 1 4 4h16a2 2 0 0 1 2.05 2.525L12 13.065zm0 2.435 11-7.22V18a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8.28l11 7.22z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+
 </body>
 </html>
