@@ -6,6 +6,11 @@
   <title>360 Studios</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
   <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
@@ -17,9 +22,21 @@
       min-height: 100vh;
     }
 
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* content centered, but back-button will override via align-self */
+      padding: 40px 20px;
+      text-align: center;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
     .back-button {
-      display: inline-block;
-      margin: 20px;
+      align-self: flex-start; /* prevents stretching — keeps button its natural width */
+      margin-bottom: 20px;
+      margin-left: 20px;
       text-decoration: none;
       background-color: #333;
       color: #fff;
@@ -27,6 +44,7 @@
       border-radius: 5px;
       font-size: 0.95rem;
       transition: background-color 0.3s ease;
+      display: inline-block;
     }
 
     .back-button:hover {
@@ -36,8 +54,9 @@
     .container {
       max-width: 1000px;
       margin: 0 auto;
-      padding: 40px 20px;
-      flex: 1;
+      padding: 0 20px;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     h1 {
@@ -48,9 +67,7 @@
     }
 
     @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
+      to { opacity: 1; }
     }
 
     .description {
@@ -84,37 +101,6 @@
       transform: scale(1.03);
     }
 
-    /* Footer styling */
-    .footer {
-      background-color: #34495e;
-      color: #fff;
-      padding: 25px 15px;
-      text-align: center;
-      font-size: 0.9rem;
-      margin-top: auto;
-    }
-
-    .footer-text {
-      margin: 0;
-    }
-
-    .footer-icons {
-      margin-top: 12px;
-    }
-
-    .footer-icons a {
-      margin: 0 8px;
-      display: inline-block;
-    }
-
-    .footer-icons svg {
-      transition: transform 0.2s ease;
-    }
-
-    .footer-icons svg:hover {
-      transform: scale(1.2);
-    }
-
     .lightbox {
       display: none;
       position: fixed;
@@ -138,64 +124,88 @@
       display: flex;
     }
 
+    /* Footer (consistent with other pages) */
+    .footer {
+      width: 100%;
+      background-color: #34495e;
+      color: #eee;
+      padding: 20px;
+      font-size: 0.85rem; /* consistent with other pages */
+      text-align: center;
+      box-sizing: border-box;
+      margin-top: 0;
+      flex-shrink: 0;
+      opacity: 0;
+      animation: fadeInFooter 0.9s ease forwards;
+      animation-delay: 1.5s;
+    }
+
+    .footer-text { margin: 0; }
+    .footer-icons { margin-top: 10px; }
+    .footer-icons a { margin: 0 8px; display: inline-block; }
+    .footer-icons svg { width: 22px; height: 22px; fill: #eee; transition: fill 0.25s ease, transform 0.2s ease; vertical-align: middle; }
+    .footer-icons a:hover svg { fill: #fff; transform: scale(1.05); }
+
+    @keyframes fadeInFooter {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
     @media (max-width: 500px) {
       .back-button {
         font-size: 0.85rem;
         padding: 8px 12px;
-        margin: 15px;
+        margin-left: 15px;
       }
-
-      h1 {
-        font-size: 1.8rem;
-      }
-
-      .description {
-        font-size: 1rem;
-      }
+      h1 { font-size: 1.8rem; }
+      .description { font-size: 1rem; }
+      .footer-icons svg { width: 20px; height: 20px; }
     }
   </style>
 </head>
 <body>
 
-  <a href="work.html" class="back-button">← Back to Work</a>
+  <main>
+    <a href="work.html" class="back-button">← Back to Work</a>
 
-  <div class="container">
-    <h1>360 Studios</h1>
+    <div class="container">
+      <h1>360 Studios</h1>
 
-    <div class="description">
-      <p>
-        <a href="https://www.google.com/search?q=mma+federation+360+studios">360 Studios</a> was a mobile game development company based in Ancoats, Manchester. I led the studio’s social media strategy and served as Community Manager, engaging users across platforms and at live events to build a passionate player base. In addition, I spearheaded Business Development efforts, securing high-profile licensing agreements for our flagship title MMA Federation. This included partnerships with leading MMA figures such as current UFC World Champion Tom Aspinall, rising star Paddy Pimblett, and renowned coach John Kavanagh, known for his work with Conor McGregor.
-      </p>
+      <div class="description">
+        <p>
+          <a href="https://www.google.com/search?q=mma+federation+360+studios">360 Studios</a> was a mobile game development company based in Ancoats, Manchester. I led the studio’s social media strategy and served as Community Manager, engaging users across platforms and at live events to build a passionate player base. In addition, I spearheaded Business Development efforts, securing high-profile licensing agreements for our flagship title MMA Federation. This included partnerships with leading MMA figures such as current UFC World Champion Tom Aspinall, rising star Paddy Pimblett, and renowned coach John Kavanagh, known for his work with Conor McGregor.
+        </p>
+      </div>
+
+      <div class="gallery">
+        <a href="#img1"><img src="images/360studios1.png" alt="360 Studios Image 1" /></a>
+        <a href="#img2"><img src="images/360studios2.png" alt="360 Studios Image 2" /></a>
+        <a href="#img3"><img src="images/360studios3.png" alt="360 Studios Image 3" /></a>
+        <a href="#img4"><img src="images/360studios4.png" alt="360 Studios Image 4" /></a>
+        <a href="#img5"><img src="images/360studios5.png" alt="360 Studios Image 5" /></a>
+        <a href="#img6"><img src="images/360studios6.png" alt="360 Studios Image 6" /></a>
+      </div>
+
+      <!-- Lightbox popouts -->
+      <div id="img1" class="lightbox" onclick="location.href='#'"><img src="images/360studios1.png" alt=""></div>
+      <div id="img2" class="lightbox" onclick="location.href='#'"><img src="images/360studios2.png" alt=""></div>
+      <div id="img3" class="lightbox" onclick="location.href='#'"><img src="images/360studios3.png" alt=""></div>
+      <div id="img4" class="lightbox" onclick="location.href='#'"><img src="images/360studios4.png" alt=""></div>
+      <div id="img5" class="lightbox" onclick="location.href='#'"><img src="images/360studios5.png" alt=""></div>
+      <div id="img6" class="lightbox" onclick="location.href='#'"><img src="images/360studios6.png" alt=""></div>
     </div>
-
-    <div class="gallery">
-      <a href="#img1"><img src="images/360studios1.png" alt="360 Studios Image 1" /></a>
-      <a href="#img2"><img src="images/360studios2.png" alt="360 Studios Image 2" /></a>
-      <a href="#img3"><img src="images/360studios3.png" alt="360 Studios Image 3" /></a>
-      <a href="#img4"><img src="images/360studios4.png" alt="360 Studios Image 4" /></a>
-      <a href="#img5"><img src="images/360studios5.png" alt="360 Studios Image 5" /></a>
-      <a href="#img6"><img src="images/360studios6.png" alt="360 Studios Image 6" /></a>
-    </div>
-
-    <!-- Lightbox popouts -->
-    <div id="img1" class="lightbox" onclick="location.href='#'"><img src="images/360studios1.png" alt=""></div>
-    <div id="img2" class="lightbox" onclick="location.href='#'"><img src="images/360studios2.png" alt=""></div>
-    <div id="img3" class="lightbox" onclick="location.href='#'"><img src="images/360studios3.png" alt=""></div>
-    <div id="img4" class="lightbox" onclick="location.href='#'"><img src="images/360studios4.png" alt=""></div>
-    <div id="img5" class="lightbox" onclick="location.href='#'"><img src="images/360studios5.png" alt=""></div>
-    <div id="img6" class="lightbox" onclick="location.href='#'"><img src="images/360studios6.png" alt=""></div>
-  </div>
+  </main>
 
   <div class="footer">
     <p class="footer-text">© 2025 Jay Perrin | Freelance Digital Marketing</p>
     <div class="footer-icons">
       <a href="https://www.linkedin.com/in/jayperrin/" target="_blank" aria-label="LinkedIn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#0077b5" viewBox="0 0 24 24">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
           <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V24h-4V8.5zM8.5 8.5h3.6v2.1h.05c.5-.95 1.7-2.1 3.5-2.1 3.7 0 4.4 2.4 4.4 5.5V24h-4v-8.2c0-2 0-4.5-2.75-4.5S12 13.4 12 15.7V24h-4V8.5z"/>
         </svg>
       </a>
       <a href="mailto:contact@jayperrinsocial.co.uk" aria-label="Email">
-        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#fff" viewBox="0 0 24 24">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
           <path d="M12 13.065 1.95 6.525A2 2 0 0 1 4 4h16a2 2 0 0 1 2.05 2.525L12 13.065zm0 2.435 11-7.22V18a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8.28l11 7.22z"/>
         </svg>
       </a>
